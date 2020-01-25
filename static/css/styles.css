@@ -1,0 +1,41 @@
+* {
+    font-family: arial; 
+}
+
+body {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+div#main-container {
+    width: 25%;
+    min-height: 50%;
+}
+
+div.cont {
+    border: 1px solid black;
+    margin-top: 2px;
+}
+
+form#reg-form {
+    display: flex;
+    flex-direction: column;
+}
+
+input.reg-input {
+    width: 50%;
+    margin: 5px 25%;
+}
+
+div#if-reg {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+button.butn {
+    width: 25%;
+    align-self: center;
+    border-radius: 15%;
+}
