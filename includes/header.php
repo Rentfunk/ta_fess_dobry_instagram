@@ -1,4 +1,4 @@
-<!DoCTYPE html5>
+<!DOCTYPE html5>
 
 <html>
 <head>
@@ -17,8 +17,8 @@
                 <img src="static/pictures/instagram-logo.png" alt="instagram lgog" height="60px" width="60px">
             </div>
             <div class="nav-item"><a href="#">Your profile</a></div>
-            <div class="nav-item"><a href="#">Feed</a></div>
-            <div class="nav-item"><a href="#">Take photo</a></div>
+            <div class="nav-item"><a href="index.php">Feed</a></div>
+            <div class="nav-item"><a href="add_post.php">Add photo</a></div>
             <div id="dm-btn" class="nav-item"><a href="#">DM</a></div>
         </div>
 

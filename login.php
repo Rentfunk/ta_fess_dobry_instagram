@@ -1,3 +1,34 @@
+<?php 
+    session_start();
+    if (isset($_POST["fess-btn"])) {
+        include_once("db.php");
+        $username = strip_tags($_POST["username"]);
+        $password = strip_tags($_POST["password"]);
+
+        $username = stripslashes($username);
+        $password = stripslashes($password);
+
+        $username = mysqli_real_escape_string($conn, $username);
+        $password = mysqli_real_escape_string($conn, $username);
+
+        $password = md5($_POST["password"]);
+
+
+        $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
+
+        $res = mysqli_query($conn, $sql);
+        $row = mysqli_fetch_assoc($res);
+        $id = $row["id"];
+        $db_password = $row["password"];
+
+        if ($password == $db_password) {
+            $_SESSION["id"] = $id;
+            $_SESSION["username"] = $username;
+            header("Location: index.php");
+        }
+    }
+?>
+
 <!DOCTYPE html5>
 
 <html>
@@ -18,15 +49,11 @@
                 <form id="reg-form" action="login.php" method="post">
                     <input class="reg-input" type="text" placeholder="Name" name="username" >
                     <input class="reg-input" type="password" placeholder="Password" name="password">
-                    <input id="fess-btn" type="submit">
+                    <input id="fess-btn" type="submit" name="fess-btn">
                 </form>
-                <?php 
-                    if ($_POST["username"] == "Rene" && $_POST["password"] == "serusmore")
-                        header("Location:/complete_instagram");
-                ?>
             </div>
             <div id="if-reg" class="cont">
-                <p>Do you want to <a href="signin.html">Sign in</a>?</p>
+                <p>Do you want to <a href="register.php">Sign in</a>?</p>
             </div>
         </div>
     </body>

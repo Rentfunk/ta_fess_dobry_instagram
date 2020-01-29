@@ -16,7 +16,7 @@ div.insta-body {
 div#navbaru {
     display: flex;
     justify-content: space-between;
-    height: 70px;
+    height: 80px;
     border-bottom: 1px solid black;
     padding: 0 75px;
 }
@@ -49,6 +49,48 @@ div#main-feed {
 }
 
 /* POST STYLES  */
+
+
+/* TEMPORARY PART */
+
+
+div.test-post {
+    background-color: grey;
+    border-radius: 10px;
+    padding: 10px;
+    position: relative;
+}
+
+h3.test-header {
+    color: black;
+}
+
+h3.test-header a {
+    color: black;
+    text-decoration: none !important;
+}
+
+h4.test-decoration {
+    color: red;
+}
+
+div.post-btns {
+    display: flex;
+    position: absolute;
+    top: 0;
+    right: 0;
+}
+
+div.edit {
+    margin: 3px 5px;
+}
+
+div.edit a {
+    color: black;
+    text-decoration: none;
+}
+
+/*END HERE*/
 
 div.insta-post {
     border: 1px solid black;
@@ -183,4 +225,24 @@ div.msg-area {
     margin: 0 auto;
     border: 1px solid grey;
     border-top: none;
+}
+
+form#add-post-form {
+    display: flex;
+    flex-direction: column;
+    border: 1px solid grey;
+}
+
+form#add-post-form input {
+    margin: 10
+}
+
+input[value=Submit] {
+    width: 20%;
+    align-self: center;
+}
+
+textarea[type=text] {
+    margin: 10;
+    resize: none;
 }
