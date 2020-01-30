@@ -17,14 +17,25 @@
         $sql = "SELECT * FROM users WHERE username = '$username' LIMIT 1";
 
         $res = mysqli_query($conn, $sql);
-        $row = mysqli_fetch_assoc($res);
-        $id = $row["id"];
-        $db_password = $row["password"];
 
-        if ($password == $db_password) {
-            $_SESSION["id"] = $id;
-            $_SESSION["username"] = $username;
-            header("Location: index.php");
+        if (mysqli_num_rows($res) != 0) {
+            $row = mysqli_fetch_assoc($res);
+            $id = $row["id"];
+            $db_password = $row["password"];
+            $type = $row["type"];
+
+            if ($password == $db_password) {
+                $_SESSION["id"] = $id;
+                $_SESSION["username"] = $username;
+                $_SESSION["type"] = $type;
+                header("Location: index.php");
+            
+            } else {
+                $pass_error = "Wrong password!";
+            }
+        
+        } else {
+            $pass_error = "Username doesn't exist!";
         }
     }
 ?>
@@ -55,6 +66,7 @@
             <div id="if-reg" class="cont">
                 <p>Do you want to <a href="register.php">Sign in</a>?</p>
             </div>
+            <div class="error-div"><?php echo $pass_error;?></div>
         </div>
     </body>
 </html>

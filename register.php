@@ -23,7 +23,7 @@
             $test_username = $row["username"];
             if (mysqli_num_rows($res1) == 0) {
                 echo "cant run query";
-                $sql1 = "INSERT INTO users (username, password) VALUES ('$new_username', '$password')";
+                $sql1 = "INSERT INTO users (username, password, type) VALUES ('$new_username', '$password', 'u')";
                 $res2 = mysqli_query($conn, $sql1);
                 header("Location: login.php");
             } else {

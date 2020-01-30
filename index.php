@@ -1,6 +1,7 @@
 <?php 
     session_start();
     require("includes/check_if_logged_in.php");
+    include_once("config.php");
     include("includes/header.php");    
     include_once("db.php");
 ?>
@@ -20,15 +21,7 @@
                         $content = $row["post_text"];
 
 
-                        $posts .= "<div class='test-post'>
-                                    <div class='post-btns'>
-                                        <div class='edit'><a href='#'>Edit</a></div>
-                                        <div class='edit'><a href='#'>Delete</a></div>
-                                    </div>
-                                    <h3 class='test-header'><a href='view_post.php?pid=$id'>$username</a></h3><br>
-                                    <h4 class='test-header'>$date</h4>
-                                    <div>$content</div>
-                                  </div>";
+                        $posts .= create_post($id, $username, $date, $content, $admin);
                     }
                     echo $posts;
                 } else {

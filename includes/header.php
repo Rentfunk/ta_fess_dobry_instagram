@@ -16,7 +16,14 @@
             <div id="insta-logo">
                 <img src="static/pictures/instagram-logo.png" alt="instagram lgog" height="60px" width="60px">
             </div>
-            <div class="nav-item"><a href="#">Your profile</a></div>
+            <div class="nav-item" id="dd-item">
+                <a href="#">Your profile</a>
+                <div class="dropdown">
+                    <a href="logout.php">Logout</a>
+                    <a href="#">Item 1</a>
+                    <a href="#">Item 2</a>
+                </div>
+            </div>
             <div class="nav-item"><a href="index.php">Feed</a></div>
             <div class="nav-item"><a href="add_post.php">Add photo</a></div>
             <div id="dm-btn" class="nav-item"><a href="#">DM</a></div>
