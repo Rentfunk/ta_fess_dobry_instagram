@@ -11,8 +11,9 @@
         $content = mysqli_real_escape_string($conn, $content);
 
         $date = date("jS F Y H:i:s");
+        $post_user_id = $_SESSION["id"];
 
-        $sql = "INSERT INTO posts (post_name, post_text, date) VALUES ('$postname', '$content', '$date')";
+        $sql = "INSERT INTO posts (post_name, post_text, date, post_user_id) VALUES ('$postname', '$content', '$date', '$post_user_id')";
 
         $res = mysqli_query($conn, $sql) or die(mysqli_error($conn));
 

@@ -20,8 +20,8 @@
                 <a href="#">Your profile</a>
                 <div class="dropdown">
                     <a href="logout.php">Logout</a>
-                    <a href="#">Item 1</a>
-                    <a href="#">Item 2</a>
+                    <a href="user_posts.php">Your posts</a>
+                    <a href="user_settings.php">Settings</a>
                 </div>
             </div>
             <div class="nav-item"><a href="index.php">Feed</a></div>

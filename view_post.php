@@ -18,7 +18,7 @@
 ?>
 
 <div id="main-feed">
-    <?php echo create_post($pid, $username, $date, $content); ?>
+    <?php echo create_post($pid, $username, $date, $content, $admin); ?>
 </div>
 
 <?php

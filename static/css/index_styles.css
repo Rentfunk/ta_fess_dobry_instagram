@@ -6,7 +6,7 @@ body {
     position: relative;
     display: flex;
     width: 100%;
-    /*overflow-x: hidden;*/
+    overflow-x: hidden;
 }
 
 div.insta-body {
@@ -107,6 +107,7 @@ h3.test-header a {
 
 h4.test-decoration {
     color: red;
+    font-size: 90% !important;
 }
 
 div.post-btns {
