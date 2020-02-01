@@ -1,7 +1,3 @@
-<html>
-<head>
-</head>
-<body>
 <?php
     $conn = mysqli_connect("localhost", "root", "root", "test_database");
 
@@ -10,5 +6,3 @@
     } 
 
 ?>
-</body>
-</html>

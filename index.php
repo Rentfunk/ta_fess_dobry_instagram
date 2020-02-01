@@ -1,7 +1,6 @@
 <?php 
     session_start();
     require("includes/check_if_logged_in.php");
-    include_once("config.php");
     include("includes/header.php");    
     include_once("db.php");
     $pid = $_SESSION["del_post_id"];
@@ -28,9 +27,9 @@
                 $content = $row["post_text"];
                 $edit_date = $row["edit_date"];
 
-
                 $posts .= create_post($id, $username, $date, $content, $admin, $edit_date);
             }
+            
             echo $posts;
         } else {
             echo "There's noting to print";

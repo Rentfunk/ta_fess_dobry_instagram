@@ -1,3 +1,10 @@
+<?php 
+    include("config.php");
+
+    $admin_display = $admin ? "block" : "none";
+    $user_display = $admin ? "none" : "block";
+?>
+
 <!DOCTYPE html5>
 
 <html>
@@ -20,8 +27,9 @@
                 <a href="#">Your profile</a>
                 <div class="dropdown">
                     <a href="logout.php">Logout</a>
-                    <a href="user_posts.php">Your posts</a>
-                    <a href="user_settings.php">Settings</a>
+                    <a href="user_posts.php" style="display: <?php echo htmlspecialchars($user_display);?>">Your posts</a>
+                    <a href="user_settings.php" style="display: <?php echo htmlspecialchars($user_display);?>">Settings</a>
+                    <a href="admin_home_page.php" style="display: <?php echo htmlspecialchars($admin_display);?>">Admin page</a>
                 </div>
             </div>
             <div class="nav-item"><a href="index.php">Feed</a></div>

@@ -126,6 +126,18 @@ div.edit a {
     text-decoration: none;
 }
 
+div.post-content {
+    font-size: 120%;
+}
+
+div.comments {
+    display: flex;
+}
+
+span.comm-user {
+    margin-right: 7.5px;
+}
+
 /*END HERE*/
 
 div.insta-post {

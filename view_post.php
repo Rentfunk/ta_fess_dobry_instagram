@@ -2,7 +2,6 @@
     session_start();
     require("includes/check_if_logged_in.php");
     include("includes/header.php");
-    include_once("config.php");
     include("db.php");
     
     $pid = $_GET["pid"];
