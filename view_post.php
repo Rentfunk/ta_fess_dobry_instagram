@@ -14,10 +14,12 @@
     $username = $row["post_name"];
     $date = $row["date"];
     $content = $row["post_text"];
+    $edit_post = $row["edit_post"];
+    $post_user = $_SESSION["username"];
 ?>
 
 <div id="main-feed">
-    <?php echo create_post($pid, $username, $date, $content, $admin); ?>
+    <?php echo create_post($pid, $username, $date, $content, $post_user, $admini, $edit_post); ?>
 </div>
 
 <?php

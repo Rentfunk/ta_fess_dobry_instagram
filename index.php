@@ -22,12 +22,13 @@
         if (mysqli_num_rows($res) > 0) {
             while($row = mysqli_fetch_assoc($res)) {
                 $id = $row["id"];
-                $username = $row["post_name"];
+                $post_name = $row["post_name"];
                 $date = $row["date"];
                 $content = $row["post_text"];
                 $edit_date = $row["edit_date"];
+                $post_user = $row["post_user"];
 
-                $posts .= create_post($id, $username, $date, $content, $admin, $edit_date);
+                $posts .= create_post($id, $post_name, $date, $content, $post_user, $admin, $edit_date);
             }
             
             echo $posts;

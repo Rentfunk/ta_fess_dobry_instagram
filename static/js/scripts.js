@@ -11,3 +11,11 @@ document.getElementsByClassName("glyphicon-remove")[0].addEventListener("click",
 });
 
 document.getElementsByClassName("dirm")[0].style.height = window.innerHeight;
+
+const comm_btns = document.getElementsByClassName("comments-btn");
+
+Object.values(comm_btns).forEach(function(btn) {
+    btn.addEventListener("click", function(event) {
+        this.nextSibling.classList.toggle("shown");
+    });
+});

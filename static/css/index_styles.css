@@ -78,7 +78,6 @@ div#dd-item:hover div.dropdown{
 
 div#main-feed {
     height: 100%;
-    margin: 0 27.5%;
     margin-top: 40px;
 }
 
@@ -93,6 +92,9 @@ div.test-post {
     border-radius: 10px;
     padding: 10px;
     position: relative;
+    max-width: 600px;
+    min-width: 350px;
+    margin: 0 auto;
     margin-bottom: 20px;
 }
 
@@ -130,6 +132,24 @@ div.post-content {
     font-size: 120%;
 }
 
+div.comments-btn {
+    cursor: pointer;
+    width: 15%;
+}
+
+div.post-bot-section {
+    margin-top: 10px;
+    display: none;
+}
+
+div.post-bot-section.shown {
+    display: block;
+}
+
+div.comment-section {
+    margin-bottom: 10px;
+}
+
 div.comments {
     display: flex;
 }
@@ -137,6 +157,38 @@ div.comments {
 span.comm-user {
     margin-right: 7.5px;
 }
+
+form.comments-form {
+    margin-bottom: 0;
+    width: 100%;
+}
+
+input[name=comment] {
+    width: 78%;
+    background-color: rgb(100,100,100);
+    border: none;
+    border-radius: 5px;
+    padding-left: 5px;
+}
+
+input[name=comment]::placeholder {
+    color: white;
+}
+
+input.comment-submit-btn {
+    width: 18%;
+    background-color: rgb(100,100,100);
+    border: none;
+    border-radius: 5px;
+    color: white;
+    padding: 1px 7px;
+}
+
+hr {
+    margin: 5px 0;
+    border-color: rgb(100,100,100);
+}
+
 
 /*END HERE*/
 

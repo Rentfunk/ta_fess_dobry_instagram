@@ -7,8 +7,8 @@
 
 <div id="main-feed">
     <?php 
-        $post_user_id = $_SESSION["id"];
-        $sql = "SELECT * FROM posts WHERE post_user_id = '$post_user_id' ORDER BY id DESC";
+        $post_user = $_SESSION["username"];
+        $sql = "SELECT * FROM posts WHERE post_user = '$post_user' ORDER BY id DESC";
 
         $res = mysqli_query($conn, $sql) or die("Error: " . mysqli_error($conn));
         
@@ -22,8 +22,9 @@
                 $content = $row["post_text"];
                 $date = $row["date"];
                 $edit_date = $row["edit_time"];
+                $post_user = $row["post_user"];
 
-                $posts .= create_post($id, $post_name, $date, $content, $admin=true, $edit_post);
+                $posts .= create_post($id, $post_name, $date, $content, $post_user, $admin=true, $edit_post);
             }
 
             echo $posts;
