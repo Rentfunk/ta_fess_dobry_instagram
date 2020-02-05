@@ -19,21 +19,49 @@
 </head>
 <body>
     <div class="insta-body">
-        <div id="navbaru">
-            <div id="insta-logo">
-                <img src="static/pictures/instagram-logo.png" alt="instagram lgog" height="60px" width="60px">
-            </div>
-            <div class="nav-item" id="dd-item">
-                <a href="#">Your profile</a>
-                <div class="dropdown">
-                    <a href="logout.php">Logout</a>
-                    <a href="user_posts.php" style="display: <?php echo htmlspecialchars($user_display);?>">Your posts</a>
-                    <a href="user_settings.php" style="display: <?php echo htmlspecialchars($user_display);?>">Settings</a>
-                    <a href="admin_home_page.php" style="display: <?php echo htmlspecialchars($admin_display);?>">Admin page</a>
+        <div class="header">
+            <div id="navbaru">
+                <div id="insta-logo">
+                    <img src="static/pictures/instagram-logo.png" alt="instagram lgog" height="60px" width="60px">
                 </div>
+                <div class="nav-item" id="dd-item">
+                    <a href="#">Your profile</a>
+                    <div class="dropdown">
+                        <a href="logout.php">Logout</a>
+                        <a href="user_posts.php" style="display: <?php echo htmlspecialchars($user_display);?>">Your posts</a>
+                        <a href="user_settings.php" style="display: <?php echo htmlspecialchars($user_display);?>">Settings</a>
+                        <a href="admin_home_page.php" style="display: <?php echo htmlspecialchars($admin_display);?>">Admin page</a>
+                    </div>
+                </div>
+                <div class="nav-item"><a href="index.php">Feed</a></div>
+                <div class="nav-item"><a href="add_post.php">Add photo</a></div>
+                <div id="dm-btn" class="nav-item"><a href="#">DM</a></div>
             </div>
-            <div class="nav-item"><a href="index.php">Feed</a></div>
-            <div class="nav-item"><a href="add_post.php">Add photo</a></div>
-            <div id="dm-btn" class="nav-item"><a href="#">DM</a></div>
+            <div class="navbaru-bot">
+                <?php 
+                    if ($_SERVER["PHP_SELF"] == "/complete_instagram/index.php") {
+                        $sql = "SELECT topic_name FROM topics";
+
+                        $res = mysqli_query($conn, $sql) or die("Error with topics: " . mysqli_error($conn));
+
+                        $topics = "<div class='topics'>";
+
+                        while ($row = mysqli_fetch_assoc($res)) {
+                            $topic = $row["topic_name"];
+                            $topics .= "<div class='topic'>$topic</div>";
+                        }
+                        
+                        $topics .= "</div>";
+                        echo $topics;
+
+                        echo "<div class='post-search'>
+                                <form>
+                                    <input type='text'>
+                                    <input type='submit' value='Search'>
+                                </form>
+                              </div>";
+                    }
+                ?>
+            </div>
         </div>
 

@@ -2,6 +2,10 @@
     font-family: Arial;
 }
 
+form {
+    margin-bottom: 0;
+}
+
 body {
     position: relative;
     display: flex;
@@ -76,6 +80,21 @@ div#dd-item:hover div.dropdown{
     background-color: rgba(90,90,90,1);
 }
 
+div.navbaru-bot {
+    display: flex;
+    height: 40px;
+    border-bottom: 1px solid grey;
+    align-items: center;
+    justify-content: space-around;
+}
+
+div.topics {
+    display: flex;
+}
+
+div.post-search {
+}
+
 div#main-feed {
     height: 100%;
     margin-top: 40px;
@@ -139,12 +158,8 @@ div.comments-btn {
 
 div.post-bot-section {
     margin-top: 10px;
-    display: none;
 }
 
-div.post-bot-section.shown {
-    display: block;
-}
 
 div.comment-section {
     margin-bottom: 10px;
@@ -156,10 +171,10 @@ div.comments {
 
 span.comm-user {
     margin-right: 7.5px;
+    font-weight: bold;
 }
 
 form.comments-form {
-    margin-bottom: 0;
     width: 100%;
 }
 
@@ -203,7 +218,7 @@ div.post-header {
 
 div.user-prof-pic {
     background-image: 
-        url("static/pictures/avatar-pic.jpg");
+        url("../pictures/avatar-pic.jpg");
     background-size: contain;
     height: 40px;
     width: 40px;
@@ -261,6 +276,7 @@ div.dirm {
     width: 40%;
     background-color: white;
     right: -40%;
+    top: 0;
     transition: right 0.75s ease-out;
     z-index: 1000;
 }
